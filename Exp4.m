@@ -1,0 +1,20 @@
+clc;
+clear all;
+Img=imread('pikachu.tif');
+%% Adding noise
+J1=imnoise(Img,'gaussian'); 
+J2=imnoise(Img,'salt & pepper'); 
+J3=imnoise(Img,'speckle');
+J4=imnoise(Img,'poisson');
+subplot(221);
+imshow(J1);
+title('gaussian noise');
+subplot(222);
+imshow(J2);
+title('Salt & pepper noise');
+subplot(223);
+imshow(J3);
+title('Speckle noise');
+subplot(224);
+imshow(J4);
+title('poisson noise');
